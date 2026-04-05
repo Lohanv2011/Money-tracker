@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Editorial Mint - Pocket Money Tracker</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#acecbb",
+                        "on-surface-variant": "#3b6447",
+                        "on-primary-fixed": "#00460e",
+                        "on-primary-fixed-variant": "#12661e",
+                        "on-tertiary-fixed": "#001834",
+                        "error-container": "#f95630",
+                        "on-background": "#0b361d",
+                        "primary": "#176a21",
+                        "primary-dim": "#025d16",
+                        "primary-container": "#9df197",
+                        "on-primary": "#d1ffc8",
+                        "tertiary-container": "#7db3ff",
+                        "background": "#ddffe2",
+                        "primary-fixed-dim": "#90e28a",
+                        "surface-container-low": "#cafdd4",
+                        "outline-variant": "#8bb795",
+                        "on-error": "#ffefec",
+                        "on-secondary": "#ffefed",
+                        "surface-container-high": "#b5f0c2",
+                        "surface-container": "#bef5c9",
+                        "inverse-surface": "#001205",
+                        "surface-dim": "#a0e4b1",
+                        "inverse-on-surface": "#7ca785",
+                        "on-tertiary-fixed-variant": "#003a6e",
+                        "surface-bright": "#ddffe2",
+                        "inverse-primary": "#9df197",
+                        "surface": "#ddffe2",
+                        "tertiary-fixed": "#7db3ff",
+                        "on-error-container": "#520c00",
+                        "secondary-dim": "#a40113",
+                        "secondary": "#b5161e",
+                        "error-dim": "#b92902",
+                        "error": "#b02500",
+                        "primary-fixed": "#9df197",
+                        "surface-tint": "#176a21",
+                        "on-tertiary-container": "#00315f",
+                        "on-secondary-fixed-variant": "#a50314",
+                        "secondary-container": "#ffc3bd",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#eef3ff",
+                        "on-primary-container": "#005c15",
+                        "secondary-fixed-dim": "#ffafa8",
+                        "outline": "#568061",
+                        "surface-container-highest": "#acecbb",
+                        "tertiary-fixed-dim": "#60a5ff",
+                        "on-surface": "#0b361d",
+                        "on-secondary-container": "#940010",
+                        "secondary-fixed": "#ffc3bd",
+                        "on-secondary-fixed": "#700009",
+                        "tertiary-dim": "#005095",
+                        "tertiary": "#005caa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #ddffe2;
+        }
+        .editorial-shadow {
+            box-shadow: 0 8px 32px 0 rgba(11, 54, 29, 0.06);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-[#ddffe2] dark:bg-emerald-950 flex items-center justify-between px-6 py-4 w-full z-40">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#176a21] dark:text-[#9df197]" data-icon="account_balance_wallet">account_balance_wallet</span>
+<h1 class="text-xl font-bold text-[#0b361d] dark:text-[#ddffe2] font-['Plus_Jakarta_Sans'] tracking-tight">The Editorial Mint</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#0b361d]/60 dark:text-[#ddffe2]/60 hover:bg-[#cafdd4] p-2 rounded-full transition-colors cursor-pointer" data-icon="notifications">notifications</span>
+</div>
+</header>
+<main class="px-6 py-8 max-w-2xl mx-auto space-y-8">
+<!-- Header Hero Section -->
+<div class="space-y-1">
+<h2 class="font-headline text-on-surface-variant text-sm font-semibold tracking-wider uppercase">Pocket Money Tracker</h2>
+<p class="font-headline text-3xl font-extrabold text-on-surface tracking-tight">Hello, Keeper.</p>
+</div>
+<!-- Main Balance Card: Bento Layout -->
+<div class="bg-surface-container-lowest rounded-[2rem] p-8 editorial-shadow relative overflow-hidden group">
+<!-- Background Decoration -->
+<div class="absolute -right-12 -top-12 w-48 h-48 bg-primary-container/20 rounded-full blur-3xl transition-transform group-hover:scale-125 duration-700"></div>
+<div class="relative z-10 space-y-4">
+<div class="flex justify-between items-start">
+<span class="font-label text-on-surface-variant font-medium text-sm tracking-wide">Total Balance</span>
+<span class="material-symbols-outlined text-primary" data-icon="verified_user">verified_user</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-on-surface font-headline text-5xl font-extrabold tracking-tighter">$150.00</span>
+<span class="text-primary font-label font-bold text-sm bg-primary-container/30 px-2 py-1 rounded-lg">+2.4%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-low rounded-full overflow-hidden mt-6">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container rounded-full w-3/4"></div>
+</div>
+</div>
+</div>
+<!-- Action Buttons: Horizontal Layout -->
+<div class="grid grid-cols-2 gap-4">
+<button class="bg-gradient-to-br from-primary to-primary-container text-white py-5 px-6 rounded-3xl flex items-center justify-center gap-3 active:scale-95 transition-all shadow-lg hover:brightness-105">
+<span class="material-symbols-outlined font-bold" data-icon="add" style="font-variation-settings: 'wght' 700;">add</span>
+<span class="font-headline font-bold">Add Money</span>
+</button>
+<button class="bg-secondary text-on-secondary py-5 px-6 rounded-3xl flex items-center justify-center gap-3 active:scale-95 transition-all shadow-lg hover:brightness-110">
+<span class="material-symbols-outlined font-bold" data-icon="remove" style="font-variation-settings: 'wght' 700;">remove</span>
+<span class="font-headline font-bold">Add Expense</span>
+</button>
+</div>
+<!-- Summary Cards: Asymmetric Grid -->
+<div class="grid grid-cols-12 gap-4">
+<!-- Money In Card -->
+<div class="col-span-7 bg-surface-container-low rounded-[2rem] p-6 space-y-4">
+<div class="w-10 h-10 bg-primary/10 rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_downward">arrow_downward</span>
+</div>
+<div>
+<p class="font-label text-on-surface-variant text-xs font-semibold mb-1">Money In</p>
+<p class="font-headline text-2xl font-bold text-primary tracking-tight">$200.00</p>
+</div>
+</div>
+<!-- Spent Card -->
+<div class="col-span-5 bg-surface-container rounded-[2rem] p-6 space-y-4">
+<div class="w-10 h-10 bg-secondary/10 rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="arrow_upward">arrow_upward</span>
+</div>
+<div>
+<p class="font-label text-on-surface-variant text-xs font-semibold mb-1">Spent</p>
+<p class="font-headline text-2xl font-bold text-secondary tracking-tight">$50.00</p>
+</div>
+</div>
+</div>
+<!-- Remaining Balance: Narrative List -->
+<div class="space-y-4 pt-4">
+<div class="flex justify-between items-center px-2">
+<h3 class="font-headline text-lg font-bold text-on-surface">Weekly Overview</h3>
+<span class="font-label text-primary text-sm font-bold">View History</span>
+</div>
+<div class="space-y-3">
+<!-- Detailed Card: Remaining Money -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 flex items-center justify-between editorial-shadow">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary-container/20 rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="savings">savings</span>
+</div>
+<div>
+<p class="font-headline text-on-surface font-bold">Remaining Money</p>
+<p class="font-label text-on-surface-variant text-xs">Safe to spend this week</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-headline text-xl font-extrabold text-on-surface">$150.00</p>
+<p class="font-label text-primary text-[10px] font-bold uppercase tracking-widest">On Track</p>
+</div>
+</div>
+<!-- Featured Image Card -->
+<div class="relative h-48 rounded-[2.5rem] overflow-hidden editorial-shadow group">
+<img alt="Financial Planning" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="close-up of aesthetic desktop with gold coins, sleek calculator and organic green plants in soft sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBSHzFKziZ2sIE_dJ4AT2RSRmaT0FhwcTAl8cn-RADkiVBRV51qBCyw7jarSXsaiuaTDh7qvksBUWVLAOpAv_i8RwFKzjx3Pj52LP90tZdvCv9LOg4URzCjkP2KvjcbYPhyFW7pGjuEyPCw0XXHd_LISQxuyDzrU7Q1uHsQocCQeEyC0S4nYA6UVyrTOVkII9NIRL4Ry-TIuzuhCeyXW66Wd2-9bopNkC_XEgTsdsk0tPiRjJryJTUgo-6pHKTlQlj4CZNwTUJY_c"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<p class="text-white/80 font-label text-xs font-bold uppercase tracking-widest mb-1">Savings Goal</p>
+<p class="text-white font-headline text-lg font-bold">New Headphones Fund</p>
+<div class="flex items-center gap-2 mt-2">
+<div class="flex-1 h-1.5 bg-white/20 rounded-full">
+<div class="h-full bg-primary-container rounded-full w-2/3"></div>
+</div>
+<span class="text-white font-label text-[10px] font-bold">67%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-6 pb-6 pt-3 bg-white/80 dark:bg-emerald-900/80 backdrop-blur-xl z-50 rounded-t-[2rem] border-t border-[#0b361d]/10 dark:border-white/10 shadow-[0_-8px_32px_0_rgba(11,54,29,0.06)]">
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#176a21] to-[#9df197] text-white rounded-2xl p-3 shadow-lg transition-all duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-['Manrope'] text-[10px] font-medium tracking-wide">Ledger</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#0b361d]/50 dark:text-[#ddffe2]/50 p-3 hover:opacity-80 transition-all duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="font-['Manrope'] text-[10px] font-medium tracking-wide">Add</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#0b361d]/50 dark:text-[#ddffe2]/50 p-3 hover:opacity-80 transition-all duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-['Manrope'] text-[10px] font-medium tracking-wide">Insights</span>
+</a>
+</nav>
+</body></html>
