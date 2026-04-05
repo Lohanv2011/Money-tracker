@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Add Money - The Editorial Mint</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#acecbb",
+                    "on-surface-variant": "#3b6447",
+                    "on-primary-fixed": "#00460e",
+                    "on-primary-fixed-variant": "#12661e",
+                    "on-tertiary-fixed": "#001834",
+                    "error-container": "#f95630",
+                    "on-background": "#0b361d",
+                    "primary": "#176a21",
+                    "primary-dim": "#025d16",
+                    "primary-container": "#9df197",
+                    "on-primary": "#d1ffc8",
+                    "tertiary-container": "#7db3ff",
+                    "background": "#ddffe2",
+                    "primary-fixed-dim": "#90e28a",
+                    "surface-container-low": "#cafdd4",
+                    "outline-variant": "#8bb795",
+                    "on-error": "#ffefec",
+                    "on-secondary": "#ffefed",
+                    "surface-container-high": "#b5f0c2",
+                    "surface-container": "#bef5c9",
+                    "inverse-surface": "#001205",
+                    "surface-dim": "#a0e4b1",
+                    "inverse-on-surface": "#7ca785",
+                    "on-tertiary-fixed-variant": "#003a6e",
+                    "surface-bright": "#ddffe2",
+                    "inverse-primary": "#9df197",
+                    "surface": "#ddffe2",
+                    "tertiary-fixed": "#7db3ff",
+                    "on-error-container": "#520c00",
+                    "secondary-dim": "#a40113",
+                    "secondary": "#b5161e",
+                    "error-dim": "#b92902",
+                    "error": "#b02500",
+                    "primary-fixed": "#9df197",
+                    "surface-tint": "#176a21",
+                    "on-tertiary-container": "#00315f",
+                    "on-secondary-fixed-variant": "#a50314",
+                    "secondary-container": "#ffc3bd",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#eef3ff",
+                    "on-primary-container": "#005c15",
+                    "secondary-fixed-dim": "#ffafa8",
+                    "outline": "#568061",
+                    "surface-container-highest": "#acecbb",
+                    "tertiary-fixed-dim": "#60a5ff",
+                    "on-surface": "#0b361d",
+                    "on-secondary-container": "#940010",
+                    "secondary-fixed": "#ffc3bd",
+                    "on-secondary-fixed": "#700009",
+                    "tertiary-dim": "#005095",
+                    "tertiary": "#005caa"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        input:focus, select:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(23, 106, 33, 0.4);
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col items-center">
+<!-- Top Header -->
+<header class="w-full top-0 sticky z-50 bg-[#ddffe2] dark:bg-emerald-950 flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface-container-low text-primary active:scale-95 transition-transform">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-xl font-bold font-headline tracking-tight text-[#0b361d] dark:text-[#ddffe2]">Add Money</h1>
+</div>
+<div class="text-primary dark:text-[#9df197]">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+</header>
+<main class="w-full max-w-md px-6 pt-8 pb-32 flex-grow">
+<!-- Tactile Form Container -->
+<div class="space-y-10">
+<!-- Amount Input Section -->
+<section class="space-y-4">
+<label class="font-label text-sm font-semibold text-on-surface-variant/80 tracking-wide ml-1">Amount</label>
+<div class="relative group">
+<div class="absolute left-6 top-1/2 -translate-y-1/2 text-primary font-headline text-3xl font-bold">$</div>
+<input class="w-full bg-surface-container-lowest text-on-surface font-headline text-5xl font-extrabold py-8 pl-14 pr-6 rounded-[2rem] border-none placeholder:text-surface-dim transition-all focus:ring-0" placeholder="0.00" type="number"/>
+</div>
+</section>
+<!-- Source Selection Section -->
+<section class="space-y-4">
+<div class="flex justify-between items-center ml-1">
+<label class="font-label text-sm font-semibold text-on-surface-variant/80 tracking-wide">Source</label>
+</div>
+<!-- Intentional Asymmetry Bento Selection -->
+<div class="grid grid-cols-2 gap-3">
+<button class="col-span-2 flex items-center justify-between p-6 bg-surface-container-low rounded-[1.5rem] border-2 border-transparent hover:border-primary/20 transition-all active:scale-[0.98]">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-2xl bg-white flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">savings</span>
+</div>
+<span class="font-bold text-lg">Pocket Money</span>
+</div>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<button class="flex flex-col gap-3 p-5 bg-surface-container-lowest rounded-[1.5rem] border-2 border-transparent hover:border-primary/20 transition-all active:scale-[0.98]">
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-primary-dim">
+<span class="material-symbols-outlined">card_giftcard</span>
+</div>
+<span class="font-semibold">Gift</span>
+</button>
+<button class="flex flex-col gap-3 p-5 bg-surface-container-lowest rounded-[1.5rem] border-2 border-transparent hover:border-primary/20 transition-all active:scale-[0.98]">
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-primary-dim">
+<span class="material-symbols-outlined">more_horiz</span>
+</div>
+<span class="font-semibold">Other</span>
+</button>
+</div>
+</section>
+<!-- Quick Add Chips -->
+<section class="space-y-3">
+<label class="font-label text-xs font-bold text-on-surface-variant/60 tracking-widest ml-1 uppercase">Quick Add</label>
+<div class="flex gap-2 overflow-x-auto hide-scrollbar pb-2">
+<button class="px-6 py-3 bg-surface-container-high text-on-primary-fixed-variant font-bold rounded-full whitespace-nowrap active:scale-95 transition-transform">+$5</button>
+<button class="px-6 py-3 bg-surface-container-high text-on-primary-fixed-variant font-bold rounded-full whitespace-nowrap active:scale-95 transition-transform">+$10</button>
+<button class="px-6 py-3 bg-surface-container-high text-on-primary-fixed-variant font-bold rounded-full whitespace-nowrap active:scale-95 transition-transform">+$20</button>
+<button class="px-6 py-3 bg-surface-container-high text-on-primary-fixed-variant font-bold rounded-full whitespace-nowrap active:scale-95 transition-transform">+$50</button>
+</div>
+</section>
+<!-- Visual Decorative Element (Tactile Ledger Aesthetic) -->
+<div class="p-6 bg-surface-dim/30 rounded-[2rem] flex items-center gap-4 border border-outline-variant/10">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-surface bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="close up portrait of a smiling person with soft natural lighting and warm tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfxHm4XA9gVBRA3XXsASr4h1ikBx278LaGp1UGZrMt4Yp8KqIpYlTQaNmO1l52JFUHBXoqBK4IV_mmnPrJ13k0QClIaqVvIeSCNI9j66bKOQMJ_VjoU6viAGhBg73v-1jZ2V3k-8EEcaVdMP4Ncg3ojyRN2U9viX4M1lfL7cCNA7_Un3MdbJj-Ay8iM0JEFfwCvwbalUOwAV-ZJN3ignAGMGRUycz47auh_Qkcs5uF-MRhWskUjmcZFZdil7vqoCXCic3Sy_oyUvs"/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-surface bg-primary flex items-center justify-center text-white text-xs font-bold">
+<span class="material-symbols-outlined scale-75">trending_up</span>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant font-medium leading-relaxed">Your balance will grow by <span class="font-bold text-primary">$0.00</span> after this transaction.</p>
+</div>
+</div>
+</main>
+<!-- Bottom Action Floating Shell -->
+<div class="fixed bottom-0 left-0 w-full p-6 bg-white/40 backdrop-blur-xl z-[60]">
+<div class="max-w-md mx-auto">
+<button class="w-full h-16 bg-gradient-to-br from-primary to-primary-container text-white font-headline text-lg font-extrabold rounded-[1.5rem] shadow-[0_12px_24px_-8px_rgba(23,106,33,0.4)] flex items-center justify-center gap-3 active:scale-95 transition-all">
+<span>Save</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Background Decoration for Editorial Feel -->
+<div class="fixed top-20 right-[-10%] w-64 h-64 bg-primary-container/20 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+<div class="fixed bottom-40 left-[-10%] w-80 h-80 bg-surface-variant/30 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+</body></html>
